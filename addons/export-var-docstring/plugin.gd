@@ -71,16 +71,6 @@ func find_script_property_tooltip()->Control:
 
 
 
-static func get_nodes(node:Node)->Array:
-	var nodes = []
-	var stack = [node]
-	while stack:
-		var n = stack.pop_back()
-		nodes.push_back(n)
-		stack.append_array(n.get_children())
-	return nodes
-
-
 static func find_child_by_type(node:Node, type):
 	for child in node.get_children():
 		if child is type:
